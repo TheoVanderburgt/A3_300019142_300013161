@@ -6,7 +6,7 @@ Last MOdified on: March 16th 2018
 */
 public class Cube{
   Color[] faces, start;
-  faces= new Color[5];
+  //faces = new Color[5];
 
   public void Cube(Color[] faces){
     for(int i=0; i<=faces.length;i++){

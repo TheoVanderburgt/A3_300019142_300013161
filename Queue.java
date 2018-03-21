@@ -6,7 +6,7 @@ Last MOdified on: March 16th 2018
 */
 public interface Queue<E>{
   void enqueue(E obj);
-  Color dequeue();
+  E dequeue();
   boolean isEmpty();
   int size();
 }
