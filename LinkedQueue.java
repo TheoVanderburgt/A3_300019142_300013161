@@ -4,28 +4,37 @@ John Bousfield        ID: 300013161
 Theo Van der Burgt    ID: 300019142
 Last MOdified on: March 16th 2018
 */
-public class LinkedQueue<E> implements Queue{
+public class LinkedQueue<E> implements Queue<E>{
 
-  public static Element<T>{
-    private T val;
-    private Element<T> next;
+  private int size;
+  private element<E> front;
+  private element<E> rear;
 
-    private Element(T val, Element<T> next){
+  public class element<E>{
+    private E val;
+    private element<E> next;
+
+    private element(E val, element<E> next){
       this.val=val;
       this.next=next;
     }
   }
-  private int size;
-  private Element<E> front;
-  private Element<E> rear;
+
   public void LinkedQueue(){
-    this.size==0;
+    size=0;
   }
 
   public void enqueue(){
-    Element<E> thing;
-    thing=new Element<E>(val,null);
 
+    element<E> thing;
+    thing =new element<E>(val,null);
+    if (isEmpty()){
+      front = thing;
+      rear = thing;
+    }else{
+      rear.next() = thing;
+      rear = thing;
+    }
     //TODO Not DONE!
 
   }
