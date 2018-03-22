@@ -5,17 +5,18 @@ Theo Van der Burgt    ID: 300019142
 Last MOdified on: March 16th 2018
 */
 public class Cube{
-  Color[] faces, start;
+  private Color[] faces, start;
+  private int nextCounter;
   //faces = new Color[5];
 
   public void Cube(Color[] faces){
+    nextCounter=0;
     for(int i=0; i<=faces.length;i++){
       this.start[i]=this.faces[i]=faces[i];
 
     }
   }
   //Next method NEEDS too DEEP COPY!!!!!!!!!!!!!!!!!!
-  //needs methods   hasNext, next, and reset
   public void reset(){
     for (int i=0;i<6;i++){
       faces[i]=start[i];
@@ -46,6 +47,23 @@ public class Cube{
     faces[5]=temp;
   }
 
+  public boolean hasNext(){
+    return nextCounter<23;
+  }
+
+  public void next(){
+    if (hasNext()){
+      if (nextCounter==4 || nextCounter==8 ||nextCounter==20){
+        rightRoll();
+      }else if (nextCounter==12||nextCounter==16){
+        leftRoll();
+      }else{
+        rotate();
+      }
+    }else{
+      //TODO THROW ERROR
+    }
+  }
 
 
   public Color getUp(){
