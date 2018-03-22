@@ -16,7 +16,19 @@ public class Cube{
   }
   //Next method NEEDS too DEEP COPY!!!!!!!!!!!!!!!!!!
   //needs methods   hasNext, next, and reset
+  public void reset(){
+    for (int i=0;i<6;i++){
+      faces[i]=start[i];
+    }
+  }
 
+  public void rotate(){
+    Color temp=getLeft();
+    faces[4]=faces[3];
+    faces[3]=faces[2];
+    faces[2]=faces[1];
+    faces[1]=temp;
+  }
 
 
 
