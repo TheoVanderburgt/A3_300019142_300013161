@@ -30,8 +30,21 @@ public class Cube{
     faces[1]=temp;
   }
 
+  public void rightRoll(){
+    Color temp=getLeft();
+    faces[4]=faces[5];
+    faces[5]=faces[2];
+    faces[2]=faces[0];
+    faces[0]=temp;
+  }
 
-
+  public void leftRoll(){
+    Color temp=getLeft();
+    faces[4]=faces[0];
+    faces[0]=faces[2];
+    faces[2]=faces[5];
+    faces[5]=temp;
+  }
 
 
 
