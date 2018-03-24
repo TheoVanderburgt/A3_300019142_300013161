@@ -36,7 +36,6 @@ public class LinkedQueue<E> implements Queue<E>{
       last.next = thing;
       last = thing;
     }
-    //TODO Not DONE!
 
   }
   public E dequeue(){
@@ -47,12 +46,15 @@ public class LinkedQueue<E> implements Queue<E>{
       size--;
       return temp;
     }
-    return null;//TODO add actuall ending THIS IS NOT A 
+     throw new IllegalStateException("No elements left in queue");
   }
   public boolean isEmpty(){
     return this.size==0;
   }
   public int size(){
     return size;
+  }
+  public E peek(){
+    return first.value;
   }
 }
